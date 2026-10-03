@@ -1,0 +1,203 @@
+/* ==========================================================================
+   DermLite DL5 Plus - Hero Section & Lead Consultation Actions Bar
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  background-color: var(--bg-pure-white);
+  padding-top: 16px;
+  padding-bottom: 24px;
+}
+
+/* Hero Title Bar */
+.hero-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.hero-title-group h1 {
+  font-size: clamp(2.2rem, 3.5vw + 0.5rem, 3.5rem);
+  font-weight: 800;
+  color: #1a1d20;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.hero-tagline {
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-weight: 500;
+  color: #555555;
+  text-align: right;
+  letter-spacing: -0.01em;
+}
+
+/* Lead Action Bar Component */
+.lead-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px 24px;
+  margin-top: 20px;
+  margin-bottom: 24px;
+  background: var(--bg-off-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+}
+
+.lead-badges-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.lead-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.lead-pill-badge svg {
+  color: var(--brand-gold);
+}
+
+.lead-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-download-brochure {
+  background-color: var(--brand-gold);
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 26px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 14px rgba(204, 153, 102, 0.3);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-download-brochure:hover {
+  background-color: var(--brand-gold-hover);
+  box-shadow: 0 6px 20px rgba(204, 153, 102, 0.45);
+  transform: translateY(-1px);
+}
+
+.btn-request-quote {
+  background-color: #111111;
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-request-quote:hover {
+  background-color: #2b2b2b;
+  transform: translateY(-1px);
+}
+
+/* Cinematic Video Container */
+.hero-video-wrapper {
+  position: relative;
+  width: 100%;
+  background: #000000;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-video-wrapper video {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
+  display: block;
+}
+
+.video-overlay-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(15, 16, 18, 0.7);
+  backdrop-filter: blur(8px);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 10;
+}
+
+.video-ctrl-btn {
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all var(--transition-fast);
+}
+
+.video-ctrl-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--brand-gold);
+}
+
+.video-ctrl-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Responsive Hero */
+@media (max-width: 900px) {
+  .hero-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .hero-tagline {
+    text-align: left;
+  }
+  .lead-action-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .lead-action-buttons {
+    width: 100%;
+  }
+  .btn-download-brochure,
+  .btn-request-quote {
+    flex: 1;
+    justify-content: center;
+  }
+}

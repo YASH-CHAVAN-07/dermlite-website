@@ -1,0 +1,1188 @@
+{
+ "target_black": {
+  "p10": 31.0,
+  "p50": 45.0,
+  "p90": 62.0,
+  "rgb": [
+   45,
+   45,
+   45
+  ]
+ },
+ "skipped_duplicates": [
+  "IMG_7998.JPG (1).jpeg"
+ ],
+ "notes": "Coordinates are raw pixels after exif_transpose; full/ images keep the original geometry.",
+ "images": {
+  "IMG_7991": {
+   "file": "IMG_7991.JPG.jpeg",
+   "size": [
+    3024,
+    4032
+   ],
+   "background_ref_rgb": [
+    218.0,
+    221.0,
+    215.0
+   ],
+   "background_ref_pixels": 953185,
+   "wb_gains_linear": [
+    0.9692,
+    0.9398,
+    1.0
+   ],
+   "body_black_before": {
+    "p10": 36.0,
+    "p50": 42.0,
+    "p90": 50.7,
+    "median_rgb": [
+     41.3,
+     41.5,
+     49.0
+    ],
+    "b_minus_r": 7.7
+   },
+   "body_black_after": {
+    "p10": 31.3,
+    "p50": 44.8,
+    "p90": 61.8,
+    "median_rgb": [
+     44.8,
+     44.8,
+     44.8
+    ],
+    "b_minus_r": 0.0
+   },
+   "body_cast_removed_rgb_offset": [
+    -0.62,
+    -0.39,
+    5.98
+   ],
+   "body_texture_hf_std_before_after": [
+    3.19,
+    5.3
+   ],
+   "body_texture_highpass_gain": 0.765,
+   "mask_coverage": 0.2434,
+   "mask_bbox_xyxy": [
+    854,
+    453,
+    2091,
+    4032
+   ],
+   "cutout_size": [
+    630,
+    1600
+   ],
+   "flags": [
+    "6034 skin-coloured px inside the mask, 0 of them within 25 px of the edge (warm reflections in the lens / torch LED / chrome, not fingers - checked visually)"
+   ],
+   "known_issues": "Hand-held shot: the lower handle edges are straight-line fits found against the white table. A finger lies across the top of the head, so the top of the outline is flattened there. The lens shows reflections of the hand; they are glass content and are kept.",
+   "seconds": 75.3
+  },
+  "IMG_7992": {
+   "file": "IMG_7992.JPG.jpeg",
+   "size": [
+    3024,
+    4032
+   ],
+   "background_ref_rgb": [
+    223.0,
+    225.0,
+    219.0
+   ],
+   "background_ref_pixels": 942076,
+   "wb_gains_linear": [
+    0.96,
+    0.9408,
+    1.0
+   ],
+   "body_black_before": {
+    "p10": 20.0,
+    "p50": 42.1,
+    "p90": 65.6,
+    "median_rgb": [
+     42.0,
+     41.6,
+     47.0
+    ],
+    "b_minus_r": 5.0
+   },
+   "body_black_after": {
+    "p10": 31.0,
+    "p50": 45.1,
+    "p90": 62.1,
+    "median_rgb": [
+     45.2,
+     45.1,
+     45.0
+    ],
+    "b_minus_r": -0.2
+   },
+   "body_cast_removed_rgb_offset": [
+    -0.86,
+    -0.28,
+    5.49
+   ],
+   "body_texture_hf_std_before_after": [
+    8.57,
+    5.52
+   ],
+   "body_texture_highpass_gain": 0.784,
+   "mask_coverage": 0.205,
+   "mask_bbox_xyxy": [
+    840,
+    522,
+    1914,
+    4032
+   ],
+   "cutout_size": [
+    572,
+    1600
+   ],
+   "flags": [
+    "902 skin-coloured px inside the mask, 0 of them within 25 px of the edge (warm reflections in the lens / torch LED / chrome, not fingers - checked visually)"
+   ],
+   "known_issues": "Hand-held shot: the lower handle edges are straight-line fits found against the white table. The thumb covers the top right of the head (notch). A manual hint keeps the thin dial rim crescent on the right. The handle bottom is cut off by the frame edge in the photo.",
+   "seconds": 76.9
+  },
+  "IMG_7993": {
+   "file": "IMG_7993.JPG.jpeg",
+   "size": [
+    3024,
+    4032
+   ],
+   "background_ref_rgb": [
+    206.0,
+    208.0,
+    203.0
+   ],
+   "background_ref_pixels": 931449,
+   "wb_gains_linear": [
+    0.9676,
+    0.9468,
+    1.0
+   ],
+   "body_black_before": {
+    "p10": 3.4,
+    "p50": 19.1,
+    "p90": 42.8,
+    "median_rgb": [
+     17.6,
+     19.2,
+     24.0
+    ],
+    "b_minus_r": 6.4
+   },
+   "body_black_after": {
+    "p10": 30.4,
+    "p50": 45.1,
+    "p90": 62.0,
+    "median_rgb": [
+     45.1,
+     45.1,
+     45.1
+    ],
+    "b_minus_r": -0.0
+   },
+   "body_cast_removed_rgb_offset": [
+    -1.06,
+    -0.11,
+    4.89
+   ],
+   "body_texture_hf_std_before_after": [
+    11.03,
+    6.85
+   ],
+   "body_texture_highpass_gain": 0.6,
+   "mask_coverage": 0.1375,
+   "mask_bbox_xyxy": [
+    1051,
+    664,
+    1823,
+    3857
+   ],
+   "cutout_size": [
+    477,
+    1600
+   ],
+   "flags": [
+    "1241 skin-coloured px inside the mask, 109 of them within 25 px of the edge (warm reflections in the lens / torch LED / chrome, not fingers - checked visually)"
+   ],
+   "known_issues": "Hand-held shot: the lower handle edges are straight-line fits found against the white table. A fingertip sits on the top of the dial (notch). A manual hint keeps the dark contact-glass crescent right of the silver dial; it was judged to be device by eye. There is a small bump (<15 px) where the handle bottom touches the table.",
+   "seconds": 77.0
+  },
+  "IMG_7994": {
+   "file": "IMG_7994.JPG.jpeg",
+   "size": [
+    3024,
+    4032
+   ],
+   "background_ref_rgb": [
+    207.0,
+    209.0,
+    204.0
+   ],
+   "background_ref_pixels": 931074,
+   "wb_gains_linear": [
+    0.9677,
+    0.947,
+    1.0
+   ],
+   "body_black_before": {
+    "p10": 15.6,
+    "p50": 28.3,
+    "p90": 51.2,
+    "median_rgb": [
+     27.4,
+     28.0,
+     33.0
+    ],
+    "b_minus_r": 5.6
+   },
+   "body_black_after": {
+    "p10": 31.0,
+    "p50": 44.9,
+    "p90": 62.1,
+    "median_rgb": [
+     44.9,
+     44.9,
+     44.9
+    ],
+    "b_minus_r": 0.0
+   },
+   "body_cast_removed_rgb_offset": [
+    -0.86,
+    -0.22,
+    4.68
+   ],
+   "body_texture_hf_std_before_after": [
+    8.93,
+    5.86
+   ],
+   "body_texture_highpass_gain": 0.632,
+   "mask_coverage": 0.1609,
+   "mask_bbox_xyxy": [
+    929,
+    623,
+    1879,
+    3845
+   ],
+   "cutout_size": [
+    555,
+    1600
+   ],
+   "flags": [
+    "396 skin-coloured px inside the mask, 20 of them within 25 px of the edge (warm reflections in the lens / torch LED / chrome, not fingers - checked visually)"
+   ],
+   "known_issues": "Hand-held shot: the lower handle edges are straight-line fits found against the white table. The thumb covers the top right of the lens (notch). A manual hint keeps the lower right of the silver band.",
+   "seconds": 73.5
+  },
+  "IMG_7995": {
+   "file": "IMG_7995.JPG.jpeg",
+   "size": [
+    3024,
+    4032
+   ],
+   "background_ref_rgb": [
+    207.0,
+    209.0,
+    204.0
+   ],
+   "background_ref_pixels": 937557,
+   "wb_gains_linear": [
+    0.9677,
+    0.947,
+    1.0
+   ],
+   "body_black_before": {
+    "p10": 14.3,
+    "p50": 29.7,
+    "p90": 48.9,
+    "median_rgb": [
+     28.4,
+     29.0,
+     37.0
+    ],
+    "b_minus_r": 8.6
+   },
+   "body_black_after": {
+    "p10": 30.9,
+    "p50": 45.0,
+    "p90": 62.1,
+    "median_rgb": [
+     45.0,
+     45.0,
+     45.0
+    ],
+    "b_minus_r": 0.0
+   },
+   "body_cast_removed_rgb_offset": [
+    -2.33,
+    -0.14,
+    6.01
+   ],
+   "body_texture_hf_std_before_after": [
+    8.93,
+    5.9
+   ],
+   "body_texture_highpass_gain": 0.617,
+   "mask_coverage": 0.18,
+   "mask_bbox_xyxy": [
+    841,
+    637,
+    1889,
+    3862
+   ],
+   "cutout_size": [
+    600,
+    1600
+   ],
+   "flags": [
+    "2903 skin-coloured px inside the mask, 48 of them within 25 px of the edge (warm reflections in the lens / torch LED / chrome, not fingers - checked visually)"
+   ],
+   "known_issues": "Hand-held shot: the lower handle edges are straight-line fits found against the white table. The thumb covers the top right of the ring (notch). The about 15 px silver edge right of the lens rim is partly cut. A manual hint keeps the lower right of the ring.",
+   "seconds": 99.5
+  },
+  "IMG_7996": {
+   "file": "IMG_7996.JPG.jpeg",
+   "size": [
+    3024,
+    4032
+   ],
+   "background_ref_rgb": [
+    216.0,
+    218.0,
+    212.0
+   ],
+   "background_ref_pixels": 950924,
+   "wb_gains_linear": [
+    0.9588,
+    0.9391,
+    1.0
+   ],
+   "body_black_before": {
+    "p10": 13.7,
+    "p50": 27.9,
+    "p90": 53.3,
+    "median_rgb": [
+     26.3,
+     27.9,
+     34.0
+    ],
+    "b_minus_r": 7.7
+   },
+   "body_black_after": {
+    "p10": 31.0,
+    "p50": 44.9,
+    "p90": 62.1,
+    "median_rgb": [
+     44.9,
+     44.9,
+     44.9
+    ],
+    "b_minus_r": -0.0
+   },
+   "body_cast_removed_rgb_offset": [
+    -2.5,
+    0.01,
+    6.09
+   ],
+   "body_texture_hf_std_before_after": [
+    9.49,
+    5.94
+   ],
+   "body_texture_highpass_gain": 0.639,
+   "mask_coverage": 0.1809,
+   "mask_bbox_xyxy": [
+    904,
+    636,
+    1938,
+    3859
+   ],
+   "cutout_size": [
+    594,
+    1600
+   ],
+   "flags": [
+    "1087 skin-coloured px inside the mask, 7 of them within 25 px of the edge (warm reflections in the lens / torch LED / chrome, not fingers - checked visually)"
+   ],
+   "known_issues": "Hand-held shot: the lower handle edges are straight-line fits found against the white table. The thumb covers a bite out of the top right of the ring. There is a small bump at the table contact.",
+   "seconds": 103.3
+  },
+  "IMG_7997": {
+   "file": "IMG_7997.JPG.jpeg",
+   "size": [
+    3024,
+    4032
+   ],
+   "background_ref_rgb": [
+    214.0,
+    216.0,
+    210.0
+   ],
+   "background_ref_pixels": 947382,
+   "wb_gains_linear": [
+    0.9584,
+    0.9385,
+    1.0
+   ],
+   "body_black_before": {
+    "p10": 9.5,
+    "p50": 21.3,
+    "p90": 39.8,
+    "median_rgb": [
+     18.4,
+     21.1,
+     28.0
+    ],
+    "b_minus_r": 9.6
+   },
+   "body_black_after": {
+    "p10": 30.9,
+    "p50": 44.9,
+    "p90": 62.1,
+    "median_rgb": [
+     44.9,
+     44.9,
+     44.9
+    ],
+    "b_minus_r": -0.0
+   },
+   "body_cast_removed_rgb_offset": [
+    -2.58,
+    0.01,
+    6.9
+   ],
+   "body_texture_hf_std_before_after": [
+    9.83,
+    7.14
+   ],
+   "body_texture_highpass_gain": 0.6,
+   "mask_coverage": 0.1794,
+   "mask_bbox_xyxy": [
+    797,
+    633,
+    1843,
+    3864
+   ],
+   "cutout_size": [
+    598,
+    1600
+   ],
+   "flags": [
+    "4342 skin-coloured px inside the mask, 18 of them within 25 px of the edge (warm reflections in the lens / torch LED / chrome, not fingers - checked visually)"
+   ],
+   "known_issues": "Hand-held shot: the lower handle edges are straight-line fits found against the white table. Fingers cover the top of the ring (flat, slightly jagged top). The lens shows a brown reflection of the curtain.",
+   "seconds": 103.3
+  },
+  "IMG_7998": {
+   "file": "IMG_7998.JPG.jpeg",
+   "size": [
+    3024,
+    4032
+   ],
+   "background_ref_rgb": [
+    213.0,
+    215.0,
+    209.0
+   ],
+   "background_ref_pixels": 947932,
+   "wb_gains_linear": [
+    0.9582,
+    0.9383,
+    1.0
+   ],
+   "body_black_before": {
+    "p10": 11.5,
+    "p50": 27.8,
+    "p90": 51.6,
+    "median_rgb": [
+     26.3,
+     27.9,
+     34.0
+    ],
+    "b_minus_r": 7.7
+   },
+   "body_black_after": {
+    "p10": 31.0,
+    "p50": 44.9,
+    "p90": 62.0,
+    "median_rgb": [
+     44.9,
+     44.9,
+     44.9
+    ],
+    "b_minus_r": -0.0
+   },
+   "body_cast_removed_rgb_offset": [
+    -0.97,
+    -0.18,
+    5.86
+   ],
+   "body_texture_hf_std_before_after": [
+    10.17,
+    5.96
+   ],
+   "body_texture_highpass_gain": 0.6,
+   "mask_coverage": 0.1741,
+   "mask_bbox_xyxy": [
+    789,
+    634,
+    1830,
+    3870
+   ],
+   "cutout_size": [
+    595,
+    1600
+   ],
+   "flags": [],
+   "known_issues": "Hand-held shot: the lower handle edges are straight-line fits found against the white table. There is a small blocky step (about 30 px) at the top left of the ring next to the fingertip.",
+   "seconds": 104.5
+  },
+  "IMG_7999": {
+   "file": "IMG_7999.JPG.jpeg",
+   "size": [
+    3024,
+    4032
+   ],
+   "background_ref_rgb": [
+    209.0,
+    210.0,
+    205.0
+   ],
+   "background_ref_pixels": 933616,
+   "wb_gains_linear": [
+    0.9575,
+    0.9473,
+    1.0
+   ],
+   "body_black_before": {
+    "p10": 11.2,
+    "p50": 26.9,
+    "p90": 52.7,
+    "median_rgb": [
+     25.3,
+     27.1,
+     33.0
+    ],
+    "b_minus_r": 7.7
+   },
+   "body_black_after": {
+    "p10": 30.9,
+    "p50": 45.1,
+    "p90": 62.1,
+    "median_rgb": [
+     45.1,
+     45.1,
+     45.1
+    ],
+    "b_minus_r": -0.0
+   },
+   "body_cast_removed_rgb_offset": [
+    -1.07,
+    -0.16,
+    5.5
+   ],
+   "body_texture_hf_std_before_after": [
+    9.42,
+    5.66
+   ],
+   "body_texture_highpass_gain": 0.659,
+   "mask_coverage": 0.1609,
+   "mask_bbox_xyxy": [
+    853,
+    624,
+    1782,
+    3884
+   ],
+   "cutout_size": [
+    540,
+    1600
+   ],
+   "flags": [],
+   "known_issues": "Hand-held shot: the lower handle edges are straight-line fits found against the white table. The thumb covers the top right of the knurled band (notch).",
+   "seconds": 73.0
+  },
+  "IMG_8001": {
+   "file": "IMG_8001.JPG.jpeg",
+   "size": [
+    3024,
+    4032
+   ],
+   "background_ref_rgb": [
+    207.0,
+    209.0,
+    203.0
+   ],
+   "background_ref_pixels": 957842,
+   "wb_gains_linear": [
+    0.9571,
+    0.9366,
+    1.0
+   ],
+   "body_black_before": {
+    "p10": 11.0,
+    "p50": 29.1,
+    "p90": 53.3,
+    "median_rgb": [
+     28.2,
+     28.8,
+     35.0
+    ],
+    "b_minus_r": 6.8
+   },
+   "body_black_after": {
+    "p10": 30.9,
+    "p50": 45.0,
+    "p90": 61.9,
+    "median_rgb": [
+     45.0,
+     45.0,
+     45.0
+    ],
+    "b_minus_r": -0.0
+   },
+   "body_cast_removed_rgb_offset": [
+    -0.86,
+    -0.26,
+    5.38
+   ],
+   "body_texture_hf_std_before_after": [
+    8.01,
+    5.21
+   ],
+   "body_texture_highpass_gain": 0.751,
+   "mask_coverage": 0.1432,
+   "mask_bbox_xyxy": [
+    923,
+    621,
+    1705,
+    3896
+   ],
+   "cutout_size": [
+    472,
+    1600
+   ],
+   "flags": [],
+   "known_issues": "Hand-held shot: the lower handle edges are straight-line fits found against the white table. The top of the head is flattened where the fingers cover it.",
+   "seconds": 69.5
+  },
+  "IMG_8002": {
+   "file": "IMG_8002.JPG.jpeg",
+   "size": [
+    3024,
+    4032
+   ],
+   "background_ref_rgb": [
+    212.0,
+    215.0,
+    209.0
+   ],
+   "background_ref_pixels": 933438,
+   "wb_gains_linear": [
+    0.9684,
+    0.9383,
+    1.0
+   ],
+   "body_black_before": {
+    "p10": 11.1,
+    "p50": 32.1,
+    "p90": 54.4,
+    "median_rgb": [
+     31.4,
+     31.8,
+     38.0
+    ],
+    "b_minus_r": 6.6
+   },
+   "body_black_after": {
+    "p10": 30.8,
+    "p50": 45.1,
+    "p90": 62.0,
+    "median_rgb": [
+     45.1,
+     45.1,
+     45.1
+    ],
+    "b_minus_r": 0.0
+   },
+   "body_cast_removed_rgb_offset": [
+    -0.68,
+    -0.28,
+    5.09
+   ],
+   "body_texture_hf_std_before_after": [
+    9.02,
+    5.42
+   ],
+   "body_texture_highpass_gain": 0.692,
+   "mask_coverage": 0.1372,
+   "mask_bbox_xyxy": [
+    921,
+    641,
+    1684,
+    3907
+   ],
+   "cutout_size": [
+    465,
+    1600
+   ],
+   "flags": [
+    "3977 skin-coloured px inside the mask, 4 of them within 25 px of the edge (warm reflections in the lens / torch LED / chrome, not fingers - checked visually)"
+   ],
+   "known_issues": "Hand-held shot: the lower handle edges are straight-line fits found against the white table. The thumb covers the top right of the head (notch).",
+   "seconds": 66.7
+  },
+  "IMG_8003": {
+   "file": "IMG_8003.JPG.jpeg",
+   "size": [
+    3024,
+    4032
+   ],
+   "background_ref_rgb": [
+    220.0,
+    222.0,
+    217.0
+   ],
+   "background_ref_pixels": 933937,
+   "wb_gains_linear": [
+    0.9695,
+    0.9499,
+    1.0
+   ],
+   "body_black_before": {
+    "p10": 26.4,
+    "p50": 37.1,
+    "p90": 62.7,
+    "median_rgb": [
+     36.3,
+     36.9,
+     42.0
+    ],
+    "b_minus_r": 5.7
+   },
+   "body_black_after": {
+    "p10": 31.2,
+    "p50": 44.9,
+    "p90": 61.9,
+    "median_rgb": [
+     44.9,
+     44.9,
+     44.9
+    ],
+    "b_minus_r": 0.0
+   },
+   "body_cast_removed_rgb_offset": [
+    -0.78,
+    -0.28,
+    4.96
+   ],
+   "body_texture_hf_std_before_after": [
+    8.96,
+    6.62
+   ],
+   "body_texture_highpass_gain": 0.624,
+   "mask_coverage": 0.1737,
+   "mask_bbox_xyxy": [
+    877,
+    607,
+    1847,
+    3933
+   ],
+   "cutout_size": [
+    551,
+    1600
+   ],
+   "flags": [
+    "784 skin-coloured px inside the mask, 18 of them within 25 px of the edge (warm reflections in the lens / torch LED / chrome, not fingers - checked visually)"
+   ],
+   "known_issues": "Hand-held shot: the lower handle edges are straight-line fits found against the white table. There is a clearly visible thumb bite at the top right of the head.",
+   "seconds": 69.7
+  },
+  "IMG_8004": {
+   "file": "IMG_8004.JPG.jpeg",
+   "size": [
+    3024,
+    4032
+   ],
+   "background_ref_rgb": [
+    216.0,
+    219.0,
+    213.0
+   ],
+   "background_ref_pixels": 1186305,
+   "wb_gains_linear": [
+    0.969,
+    0.9393,
+    1.0
+   ],
+   "body_black_before": {
+    "p10": 13.1,
+    "p50": 22.9,
+    "p90": 50.0,
+    "median_rgb": [
+     19.6,
+     23.0,
+     32.0
+    ],
+    "b_minus_r": 12.4
+   },
+   "body_black_after": {
+    "p10": 31.1,
+    "p50": 44.9,
+    "p90": 61.9,
+    "median_rgb": [
+     44.9,
+     44.9,
+     44.9
+    ],
+    "b_minus_r": 0.0
+   },
+   "body_cast_removed_rgb_offset": [
+    -2.6,
+    -0.04,
+    8.06
+   ],
+   "body_texture_hf_std_before_after": [
+    9.09,
+    5.29
+   ],
+   "body_texture_highpass_gain": 0.691,
+   "mask_coverage": 0.271,
+   "mask_bbox_xyxy": [
+    890,
+    95,
+    2144,
+    4032
+   ],
+   "cutout_size": [
+    590,
+    1600
+   ],
+   "flags": [],
+   "known_issues": "Clean. There is a tiny notch in the ring edge at the right (about y 1160).",
+   "seconds": 70.9
+  },
+  "IMG_8006": {
+   "file": "IMG_8006.JPG.jpeg",
+   "size": [
+    3024,
+    4032
+   ],
+   "background_ref_rgb": [
+    214.0,
+    215.0,
+    206.0
+   ],
+   "background_ref_pixels": 1205338,
+   "wb_gains_linear": [
+    0.9179,
+    0.9083,
+    1.0
+   ],
+   "body_black_before": {
+    "p10": 7.1,
+    "p50": 12.9,
+    "p90": 39.9,
+    "median_rgb": [
+     10.1,
+     12.9,
+     21.0
+    ],
+    "b_minus_r": 10.9
+   },
+   "body_black_after": {
+    "p10": 31.1,
+    "p50": 44.8,
+    "p90": 62.0,
+    "median_rgb": [
+     44.8,
+     44.8,
+     44.8
+    ],
+    "b_minus_r": 0.0
+   },
+   "body_cast_removed_rgb_offset": [
+    -2.72,
+    -0.0,
+    7.98
+   ],
+   "body_texture_hf_std_before_after": [
+    7.12,
+    5.18
+   ],
+   "body_texture_highpass_gain": 0.777,
+   "mask_coverage": 0.1893,
+   "mask_bbox_xyxy": [
+    931,
+    156,
+    1802,
+    4014
+   ],
+   "cutout_size": [
+    453,
+    1600
+   ],
+   "flags": [],
+   "known_issues": "Clean. The chrome seam carries a copper reflection of the wood board, kept as genuine colour.",
+   "seconds": 61.0
+  },
+  "IMG_8007": {
+   "file": "IMG_8007.JPG.jpeg",
+   "size": [
+    3024,
+    4032
+   ],
+   "background_ref_rgb": [
+    206.0,
+    208.0,
+    201.0
+   ],
+   "background_ref_pixels": 1206751,
+   "wb_gains_linear": [
+    0.9463,
+    0.926,
+    1.0
+   ],
+   "body_black_before": {
+    "p10": 6.5,
+    "p50": 14.1,
+    "p90": 39.4,
+    "median_rgb": [
+     11.4,
+     14.1,
+     22.0
+    ],
+    "b_minus_r": 10.6
+   },
+   "body_black_after": {
+    "p10": 30.8,
+    "p50": 44.8,
+    "p90": 62.0,
+    "median_rgb": [
+     44.8,
+     44.8,
+     44.8
+    ],
+    "b_minus_r": 0.0
+   },
+   "body_cast_removed_rgb_offset": [
+    -2.66,
+    0.0,
+    7.79
+   ],
+   "body_texture_hf_std_before_after": [
+    7.93,
+    5.23
+   ],
+   "body_texture_highpass_gain": 0.739,
+   "mask_coverage": 0.1596,
+   "mask_bbox_xyxy": [
+    865,
+    428,
+    1660,
+    3967
+   ],
+   "cutout_size": [
+    452,
+    1600
+   ],
+   "flags": [],
+   "known_issues": "Clean.",
+   "seconds": 60.8
+  },
+  "IMG_8008": {
+   "file": "IMG_8008.JPG.jpeg",
+   "size": [
+    3024,
+    4032
+   ],
+   "background_ref_rgb": [
+    220.0,
+    223.0,
+    217.0
+   ],
+   "background_ref_pixels": 1205022,
+   "wb_gains_linear": [
+    0.9695,
+    0.9403,
+    1.0
+   ],
+   "body_black_before": {
+    "p10": 5.6,
+    "p50": 11.3,
+    "p90": 40.7,
+    "median_rgb": [
+     7.8,
+     11.3,
+     20.0
+    ],
+    "b_minus_r": 12.2
+   },
+   "body_black_after": {
+    "p10": 31.0,
+    "p50": 44.8,
+    "p90": 62.0,
+    "median_rgb": [
+     44.8,
+     44.8,
+     44.8
+    ],
+    "b_minus_r": 0.0
+   },
+   "body_cast_removed_rgb_offset": [
+    -2.73,
+    0.03,
+    7.6
+   ],
+   "body_texture_hf_std_before_after": [
+    7.9,
+    5.45
+   ],
+   "body_texture_highpass_gain": 0.735,
+   "mask_coverage": 0.1808,
+   "mask_bbox_xyxy": [
+    828,
+    450,
+    1875,
+    3972
+   ],
+   "cutout_size": [
+    559,
+    1600
+   ],
+   "flags": [],
+   "known_issues": "There is a small notch at the bottom of the silver dial where it meets the barrel.",
+   "seconds": 66.7
+  },
+  "IMG_8009": {
+   "file": "IMG_8009.JPG.jpeg",
+   "size": [
+    3024,
+    4032
+   ],
+   "background_ref_rgb": [
+    218.0,
+    220.0,
+    215.0
+   ],
+   "background_ref_pixels": 1217128,
+   "wb_gains_linear": [
+    0.9692,
+    0.9495,
+    1.0
+   ],
+   "body_black_before": {
+    "p10": 5.6,
+    "p50": 11.9,
+    "p90": 49.2,
+    "median_rgb": [
+     8.7,
+     12.4,
+     21.0
+    ],
+    "b_minus_r": 12.3
+   },
+   "body_black_after": {
+    "p10": 30.9,
+    "p50": 44.8,
+    "p90": 62.0,
+    "median_rgb": [
+     44.8,
+     44.8,
+     44.8
+    ],
+    "b_minus_r": 0.0
+   },
+   "body_cast_removed_rgb_offset": [
+    -2.83,
+    0.06,
+    7.92
+   ],
+   "body_texture_hf_std_before_after": [
+    7.3,
+    5.2
+   ],
+   "body_texture_highpass_gain": 0.873,
+   "mask_coverage": 0.1819,
+   "mask_bbox_xyxy": [
+    868,
+    413,
+    1917,
+    3941
+   ],
+   "cutout_size": [
+    559,
+    1600
+   ],
+   "flags": [],
+   "known_issues": "Clean.",
+   "seconds": 98.7
+  },
+  "IMG_8010": {
+   "file": "IMG_8010.JPG.jpeg",
+   "size": [
+    3024,
+    4032
+   ],
+   "background_ref_rgb": [
+    216.0,
+    218.0,
+    211.0
+   ],
+   "background_ref_pixels": 1203919,
+   "wb_gains_linear": [
+    0.9486,
+    0.9291,
+    1.0
+   ],
+   "body_black_before": {
+    "p10": 6.6,
+    "p50": 15.1,
+    "p90": 43.6,
+    "median_rgb": [
+     12.4,
+     15.1,
+     24.0
+    ],
+    "b_minus_r": 11.6
+   },
+   "body_black_after": {
+    "p10": 31.3,
+    "p50": 44.8,
+    "p90": 62.0,
+    "median_rgb": [
+     44.8,
+     44.8,
+     44.8
+    ],
+    "b_minus_r": 0.0
+   },
+   "body_cast_removed_rgb_offset": [
+    -2.67,
+    -0.0,
+    7.85
+   ],
+   "body_texture_hf_std_before_after": [
+    7.34,
+    5.17
+   ],
+   "body_texture_highpass_gain": 0.891,
+   "mask_coverage": 0.2161,
+   "mask_bbox_xyxy": [
+    747,
+    115,
+    1887,
+    4000
+   ],
+   "cutout_size": [
+    553,
+    1600
+   ],
+   "flags": [],
+   "known_issues": "Clean.",
+   "seconds": 103.4
+  }
+ }
+}

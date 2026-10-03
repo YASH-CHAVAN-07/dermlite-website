@@ -1,0 +1,186 @@
+/* ==========================================================================
+   DermLite DL5 Plus - Compatible Accessories & Clinical Papers
+   ========================================================================== */
+
+/* Accessories Section */
+.accessories-section {
+  padding: 90px 0;
+  background-color: var(--bg-pure-white);
+  border-top: 1px solid var(--border-light);
+}
+
+.accessories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.accessory-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.accessory-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(204, 153, 102, 0.4);
+}
+
+.accessory-thumb-wrap {
+  width: 100%;
+  height: 180px;
+  background: var(--bg-off-white);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  overflow: hidden;
+  padding: 16px;
+}
+
+.accessory-img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+  transition: transform var(--transition-normal);
+}
+
+.accessory-card:hover .accessory-img {
+  transform: scale(1.08);
+}
+
+.accessory-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.accessory-meta-tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--brand-gold);
+  margin-bottom: 18px;
+  display: inline-block;
+}
+
+.btn-inquire-accessory {
+  width: 100%;
+  background: #111111;
+  color: #ffffff;
+  padding: 11px 16px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-inquire-accessory:hover {
+  background: var(--brand-gold);
+  box-shadow: 0 4px 12px rgba(204, 153, 102, 0.35);
+}
+
+/* Research Papers Section */
+.papers-section {
+  padding: 90px 0;
+  background-color: var(--bg-off-white);
+  border-top: 1px solid var(--border-light);
+}
+
+.papers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.paper-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.paper-card:hover {
+  border-color: rgba(204, 153, 102, 0.5);
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+}
+
+.paper-badge {
+  background: rgba(139, 92, 246, 0.12);
+  color: var(--uv-fluorescence);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.paper-content h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.paper-citation {
+  font-size: 0.85rem;
+  color: var(--text-dark-secondary);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.paper-doi-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--brand-gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.paper-doi-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Accessories & Papers */
+@media (max-width: 1100px) {
+  .accessories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .accessories-grid {
+    grid-template-columns: 1fr;
+  }
+  .paper-card {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
