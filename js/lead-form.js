@@ -3,21 +3,47 @@
  */
 
 const LeadForm = (() => {
-  // Configuration: update with your target email or configure via UI / localStorage
+  // The lead inbox is set in js/site-config.js (SITE_CONFIG.LEAD_EMAIL) — change it there.
+  const SITE = window.SITE_CONFIG || {};
   const CONFIG = {
-    // Default email address for inquiries and brochure leads
-    TARGET_EMAIL: 'myempire0307@gmail.com',
+    TARGET_EMAIL: SITE.LEAD_EMAIL || 'myempire0307@gmail.com',
+    FORMSUBMIT_ALIAS: SITE.FORMSUBMIT_ALIAS || '',
     // Official DermLite DL5 Plus Brochure PDF from assets
     BROCHURE_PDF_URL: 'assets/Dermlite%20DL5%20Plus%20-%20Aakaar.pdf',
     BROCHURE_FILENAME: 'Dermlite DL5 Plus - Aakaar.pdf'
   };
 
+  // Each product page names its product on <body data-product="…">; a page without a
+  // downloadable brochure sets data-brochure="none" (the form then only sends the enquiry).
+  const pageProduct = () => document.body.dataset.product || 'DermLite DL5 Plus';
+  const hasBrochure = () => document.body.dataset.brochure !== 'none';
+
+  // "Enquiry for" product choice (radio group named <prefix>Product in each form).
+  // Defaults to the product of the page / button that opened the form; accessories
+  // (e.g. "IceCap for DL5") belong to DL5 Plus.
+  const productFor = context => (/skeen/i.test(context || '') ? 'DermLite skeen' : 'DermLite DL5 Plus');
+
+  function setProductChoice(prefix, context) {
+    const value = productFor(context);
+    document.querySelectorAll(`input[name="${prefix}Product"]`).forEach(r => { r.checked = r.value === value; });
+  }
+
+  function getProductChoice(prefix) {
+    const r = document.querySelector(`input[name="${prefix}Product"]:checked`);
+    return r ? r.value : pageProduct();
+  }
+
   // DOM Elements
   let leadModal, modalOverlay, modalForm, modalSuccess, leadTitle, leadSubtitle;
   let onPageForm, onPageSuccess;
 
+  // site-config.js is the single source of truth. An older version let each browser save
+  // its own address in localStorage, which silently sent that browser's leads elsewhere —
+  // clear any such leftover.
+  try { localStorage.removeItem('dermlite_recipient_email'); } catch (e) { /* storage blocked */ }
+
   function getRecipientEmail() {
-    return localStorage.getItem('dermlite_recipient_email') || CONFIG.TARGET_EMAIL;
+    return CONFIG.TARGET_EMAIL;
   }
 
   function updateRecipientDisplay() {
@@ -28,13 +54,7 @@ const LeadForm = (() => {
   }
 
   function configureRecipientEmail() {
-    const current = getRecipientEmail();
-    const newEmail = prompt('Enter your email address where all inquiry and download leads should be sent:', current);
-    if (newEmail && newEmail.trim().includes('@')) {
-      localStorage.setItem('dermlite_recipient_email', newEmail.trim());
-      updateRecipientDisplay();
-      showToast(`Lead recipient email updated to: ${newEmail.trim()}`);
-    }
+    showToast('The lead email is set in js/site-config.js (LEAD_EMAIL).');
   }
 
   function init() {
@@ -51,6 +71,10 @@ const LeadForm = (() => {
     // Update display of recipient email
     updateRecipientDisplay();
 
+    // Pre-select the product of this page in both forms
+    setProductChoice('onPageLead', pageProduct());
+    setProductChoice('modalLead', pageProduct());
+
     // Close modal triggers
     const closeBtn = document.getElementById('closeLeadModal');
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
@@ -60,7 +84,7 @@ const LeadForm = (() => {
     document.querySelectorAll('[data-action="open-brochure"]').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        const accessory = btn.getAttribute('data-product-title') || 'DermLite DL5 Plus';
+        const accessory = btn.getAttribute('data-product-title') || pageProduct();
         openModal('brochure', accessory);
       });
     });
@@ -68,7 +92,7 @@ const LeadForm = (() => {
     document.querySelectorAll('[data-action="open-contact"]').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        const accessory = btn.getAttribute('data-product-title') || 'DermLite DL5 Plus';
+        const accessory = btn.getAttribute('data-product-title') || pageProduct();
         openModal('contact', accessory);
       });
     });
@@ -294,6 +318,7 @@ const LeadForm = (() => {
       resetFormValidation(modalForm);
       const prodField = document.getElementById('modalProductContext');
       if (prodField) prodField.value = productContext;
+      setProductChoice('modalLead', productContext);
     }
     if (modalSuccess) modalSuccess.style.display = 'none';
 
@@ -397,9 +422,13 @@ const LeadForm = (() => {
       countryCode: '+91',
       email: emailInput ? emailInput.value.trim() : '',
       message: messageInput ? messageInput.value.trim() : '',
-      product: formType === 'modal' && document.getElementById('modalProductContext')
+      // Product the visitor chose (pre-selected from the page), plus what they clicked
+      // to open the form when it was something more specific (e.g. an accessory)
+      product: getProductChoice(prefix),
+      item: formType === 'modal' && document.getElementById('modalProductContext')
         ? document.getElementById('modalProductContext').value
-        : 'DermLite DL5 Plus',
+        : '',
+      source: `${formType === 'modal' ? 'Pop-up form' : 'Contact section'} — ${pageProduct()} page`,
       timestamp: new Date().toISOString(),
       formattedDate: new Date().toLocaleString()
     };
@@ -421,25 +450,42 @@ const LeadForm = (() => {
           <circle cx="12" cy="10" r="10" stroke-opacity="0.25"></circle>
           <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"></path>
         </svg>
-        <span>Processing & Delivering Brochure...</span>
+        <span>${hasBrochure() ? 'Processing & Delivering Brochure...' : 'Sending your enquiry...'}</span>
       `;
     }
 
     // 1. Save locally to localStorage (guarantees zero lead loss)
     saveLeadLocally(leadData);
 
-    // 2. Send email notification via FormSubmit directly to destination inbox
-    sendLeadEmail(leadData);
+    // 2. Trigger immediate brochure PDF download (DL5 Plus brochure; skip skeen-only enquiries)
+    const wantsBrochure = hasBrochure() && leadData.product !== 'DermLite skeen';
+    if (wantsBrochure) triggerBrochureDownload();
 
-    // 3. Trigger immediate brochure PDF download
-    triggerBrochureDownload();
+    // 3. Email the lead and wait for FormSubmit's answer before saying "thank you"
+    const sent = await sendLeadEmail(leadData);
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnText;
+    }
+    // Result note inside the form (stays visible, unlike the toast)
+    const form = formType === 'modal' ? modalForm : onPageForm;
+    let note = form && form.querySelector('.form-send-error');
+    if (form && !note) {
+      note = document.createElement('div');
+      note.className = 'form-send-error';
+      note.setAttribute('role', 'alert');
+      form.appendChild(note);
+    }
+    if (!sent.ok) {
+      const text = `Your enquiry could not be sent: ${sent.message}. Please call +91 70459 38816 or WhatsApp us.`;
+      if (note) { note.textContent = text; note.style.display = 'block'; }
+      showToast(text);
+      return;
+    }
+    if (note) note.style.display = 'none';
 
     // 4. Update UI to success screen
-    setTimeout(() => {
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnText;
-      }
+    {
 
       if (formType === 'modal') {
         if (modalForm) modalForm.style.display = 'none';
@@ -457,8 +503,10 @@ const LeadForm = (() => {
         }
       }
 
-      showToast(`Thank you, ${leadData.name}! Your brochure download has started.`);
-    }, 700);
+      showToast(wantsBrochure
+        ? `Thank you, ${leadData.name}! Your brochure download has started.`
+        : `Thank you, ${leadData.name}! Our ${leadData.product} specialist will contact you shortly.`);
+    }
   }
 
   function saveLeadLocally(lead) {
@@ -477,31 +525,44 @@ const LeadForm = (() => {
     const recipient = getRecipientEmail();
     try {
       // Send directly to configured email via FormSubmit AJAX endpoint
-      await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(recipient)}`, {
+      const target = CONFIG.FORMSUBMIT_ALIAS || recipient;
+      await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(target)}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          _subject: `[New DermLite DL5 Plus Lead] ${lead.name} from ${lead.city}`,
+          _subject: `[New ${lead.product} Lead] ${lead.name} from ${lead.city}`,
           _template: 'table',
           _captcha: 'false',
+          'Product of Interest': lead.product,
           'Full Name': lead.name,
           'City': lead.city,
           'Mobile Number': lead.mobile,
           'Email Address': lead.email,
-          'Requirements / Note': lead.message || 'Requested DL5 Plus Brochure & Clinical Consultation',
-          'Product Context': lead.product,
+          'Requirements / Note': lead.message || `Requested ${lead.product} quote & clinical consultation`,
+          'Enquiry About (item clicked)': lead.item && lead.item !== lead.product ? lead.item : '—',
+          'Enquiry Source': lead.source,
           'Submission Timestamp': lead.formattedDate
         })
-      }).then(res => res.json()).then(data => {
-        console.info('[LeadForm] Lead forwarded to recipient:', recipient, data);
-      }).catch(err => {
-        console.info('[LeadForm] Email submission note: lead is securely archived in localStorage.');
+      }).then(async res => {
+        const data = await res.json().catch(() => ({}));
+        // FormSubmit answers 200 with success "false" when it refuses a message
+        // (e.g. the recipient inbox has not activated this website yet)
+        if (!res.ok || String(data.success) !== 'true') {
+          throw new Error(data.message || `HTTP ${res.status}`);
+        }
+        console.info('[LeadForm] Lead emailed to', recipient, data);
       });
+      return { ok: true };
     } catch (err) {
-      console.info('[LeadForm] Dispatched lead payload to:', recipient);
+      console.warn('[LeadForm] Lead email NOT delivered:', err.message, '— lead kept in localStorage.');
+      let message = err.message || 'network error';
+      if (location.protocol === 'file:') message = 'open the website through http/https, not as a file';
+      else if (/activat/i.test(message)) message = `the form needs activation — check ${recipient} for an "Activate Form" email`;
+      else if (/failed to fetch|network/i.test(message)) message = 'no connection to the mail service';
+      return { ok: false, message };
     }
   }
 
@@ -531,7 +592,7 @@ const LeadForm = (() => {
       return;
     }
 
-    const headers = ['Timestamp', 'Full Name', 'City', 'Mobile Number', 'Email', 'Product', 'Message'];
+    const headers = ['Timestamp', 'Full Name', 'City', 'Mobile Number', 'Email', 'Product', 'Item Clicked', 'Source', 'Message'];
     const rows = leads.map(l => [
       `"${l.formattedDate || l.timestamp}"`,
       `"${l.name}"`,
@@ -539,6 +600,8 @@ const LeadForm = (() => {
       `"${l.mobile}"`,
       `"${l.email}"`,
       `"${l.product}"`,
+      `"${l.item || ''}"`,
+      `"${l.source || ''}"`,
       `"${(l.message || '').replace(/"/g, '""')}"`
     ]);
 

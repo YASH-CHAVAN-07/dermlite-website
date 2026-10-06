@@ -110,7 +110,7 @@
   }
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  $$('.nav-desktop .nav-link').forEach(link => {
+  $$('.nav-desktop .nav-link:not(.nav-products-toggle)').forEach(link => {
     const target = $(link.getAttribute('href'));
     if (!target) return;
     ScrollTrigger.create({

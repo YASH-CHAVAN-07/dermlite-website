@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="css/lead-modal.css?v=9" />
   <link rel="stylesheet" href="css/footer.css?v=9" />
   <!-- 3D experience layer (loaded last, re-themes everything above) -->
-  <link rel="stylesheet" href="css/experience.css?v=19" />
+  <link rel="stylesheet" href="css/experience.css?v=23" />
 
   <!-- Structured Data JSON-LD -->
   <script type="application/ld+json">
@@ -108,6 +108,19 @@
 
       <!-- Desktop Navigation -->
       <nav class="nav-desktop" aria-label="Primary Navigation">
+        <div class="nav-item nav-products">
+          <a href="#hero" class="nav-link nav-products-toggle" aria-haspopup="true">Products <span class="icon-arrow">▾</span></a>
+          <div class="dropdown-menu products-menu">
+            <a href="index.html" class="product-menu-card is-current">
+              <span class="pmc-media"><img src="assets/images/DL5P_FrontRight_3.png" alt="" /></span>
+              <span class="pmc-body"><strong>DermLite DL5 Plus</strong><small>Hybrid dermatoscope · variable polarization · 2× UV</small><span class="pmc-tag">You are here</span></span>
+            </a>
+            <a href="skeen.html" class="product-menu-card">
+              <span class="pmc-media"><img src="assets/skeen/skeen-thumb.jpg" alt="" /></span>
+              <span class="pmc-body"><strong>DermLite skeen</strong><small>AI-powered digital dermatoscope for skin &amp; hair</small><span class="pmc-tag is-new">New</span></span>
+            </a>
+          </div>
+        </div>
         <div class="nav-item"><a href="#hero" class="nav-link">Overview</a></div>
         <div class="nav-item"><a href="#ecosystem" class="nav-link">Ecosystem</a></div>
         <div class="nav-item"><a href="#simulator" class="nav-link">Simulator</a></div>
@@ -139,6 +152,13 @@
       <button class="mobile-drawer-close" id="closeMobileDrawer" aria-label="Close menu">✕</button>
     </div>
     <ul class="mobile-nav-list">
+      <li class="mobile-nav-item has-sub is-expanded">
+        <a href="#" class="mobile-nav-link">Products <span class="icon-arrow">▾</span></a>
+        <div class="mobile-submenu">
+          <a href="index.html" class="mobile-sublink is-current">DermLite DL5 Plus</a>
+          <a href="skeen.html" class="mobile-sublink">DermLite skeen <span class="pmc-tag is-new">New</span></a>
+        </div>
+      </li>
       <li class="mobile-nav-item"><a href="#hero" class="mobile-nav-link">Overview</a></li>
       <li class="mobile-nav-item"><a href="#ecosystem" class="mobile-nav-link">Ecosystem</a></li>
       <li class="mobile-nav-item"><a href="#simulator" class="mobile-nav-link">Optical Simulator</a></li>
@@ -1235,6 +1255,12 @@
                 </div>
               </div>
 
+              <div class="product-choice" role="radiogroup" aria-label="Product of interest">
+                <span class="product-choice-label">Enquiry for <span class="req">*</span></span>
+                <label class="product-choice-opt"><input type="radio" name="onPageLeadProduct" value="DermLite DL5 Plus" /><span>DL5 Plus</span></label>
+                <label class="product-choice-opt"><input type="radio" name="onPageLeadProduct" value="DermLite skeen" /><span>skeen</span></label>
+                <label class="product-choice-opt"><input type="radio" name="onPageLeadProduct" value="DermLite DL5 Plus + skeen" /><span>Both</span></label>
+              </div>
               <div class="form-group">
                 <label class="form-label" for="onPageLeadMessage">Clinical Note / Practice Requirements
                   (Optional)</label>
@@ -1363,6 +1389,12 @@
           </div>
         </div>
 
+        <div class="product-choice" role="radiogroup" aria-label="Product of interest">
+          <span class="product-choice-label">Enquiry for <span class="req">*</span></span>
+          <label class="product-choice-opt"><input type="radio" name="modalLeadProduct" value="DermLite DL5 Plus" /><span>DL5 Plus</span></label>
+          <label class="product-choice-opt"><input type="radio" name="modalLeadProduct" value="DermLite skeen" /><span>skeen</span></label>
+          <label class="product-choice-opt"><input type="radio" name="modalLeadProduct" value="DermLite DL5 Plus + skeen" /><span>Both</span></label>
+        </div>
         <div class="form-group">
           <label class="form-label" for="modalLeadMessage">Practice Requirements / Note (Optional)</label>
           <textarea id="modalLeadMessage" class="form-textarea"
@@ -1467,6 +1499,8 @@
         <div class="footer-col">
           <h4>Products</h4>
           <ul class="footer-links-list">
+            <li><a href="index.html">DermLite DL5 Plus</a></li>
+            <li><a href="skeen.html">DermLite skeen</a></li>
             <li><a href="#app-section">The DermLite App</a></li>
             <li><a href="#hero">Pocket Dermoscopy Devices</a></li>
             <li><a href="#gallery">Photo Dermoscopy Devices</a></li>
@@ -1540,14 +1574,15 @@
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 
   <!-- Site scripts -->
-  <script src="js/lead-form.js?v=9"></script>
+  <script src="js/site-config.js?v=1"></script>
+  <script src="js/lead-form.js?v=15"></script>
   <script src="js/simulator.js?v=9"></script>
   <script src="js/gallery.js?v=9"></script>
   <script src="js/nav.js?v=10"></script>
   <script src="js/app.js?v=9"></script>
   <script src="js/dl5-textures.js?v=86"></script>
   <script src="js/dl5-model.js?v=86"></script>
-  <script src="js/experience.js?v=95"></script>
+  <script src="js/experience.js?v=96"></script>
 </body>
 
 </html>
